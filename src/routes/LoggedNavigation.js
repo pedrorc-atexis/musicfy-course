@@ -1,11 +1,11 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { LoggedLayout } from "../Layout";
 import { Home, Artist, Artists, Album, Albums, Profile } from "../pages";
 
 export function LoggedNavigation() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <LoggedLayout>
         <Routes>
           <Route path="/" element={<Home />}></Route>
@@ -16,6 +16,6 @@ export function LoggedNavigation() {
           <Route path="/profile" element={<Profile />}></Route>
         </Routes>
       </LoggedLayout>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
