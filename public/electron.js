@@ -10,9 +10,8 @@ function createWindow() {
     width: 1500,
     height: 1000,
     title: "Musicfy",
-    // titleBarStyle: "hiddenInset",
-    // resizable: false,
   });
+  mainWindow.setMenu(null);
   mainWindow.loadURL(
     isDev
       ? "http://localhost:3000"
