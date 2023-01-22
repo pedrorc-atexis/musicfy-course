@@ -58,14 +58,11 @@ export function NewAlbumForm(props) {
     },
   });
 
-  const onDrop = useCallback(
-    async (acceptedFile) => {
-      const file = acceptedFile[0];
-      setImage(URL.createObjectURL(file));
-      formik.setFieldValue("image", file);
-    },
-    [formik]
-  );
+  const onDrop = useCallback(async (acceptedFile) => {
+    const file = acceptedFile[0];
+    setImage(URL.createObjectURL(file));
+    formik.setFieldValue("image", file);
+  });
 
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
