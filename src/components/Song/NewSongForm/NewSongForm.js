@@ -56,12 +56,15 @@ export function NewSongForm({ onClose }) {
     },
   });
 
-  const onDrop = useCallback(async (acceptedFile) => {
-    const file = acceptedFile[0];
-    setSongName(file.name);
-    formik.setFieldValue("file", file);
-    formik.setFieldValue("name", file.name);
-  });
+  const onDrop = useCallback(
+    async (acceptedFile) => {
+      const file = acceptedFile[0];
+      setSongName(file.name);
+      formik.setFieldValue("file", file);
+      formik.setFieldValue("name", file.name);
+    },
+    [formik]
+  );
 
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 

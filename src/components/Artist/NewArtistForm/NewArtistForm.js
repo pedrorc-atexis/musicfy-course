@@ -38,11 +38,14 @@ export function NewArtistForm({ onClose }) {
   });
 
   const [image, setImage] = useState(null);
-  const onDrop = useCallback(async (acceptedFile) => {
-    const file = acceptedFile[0];
-    setImage(URL.createObjectURL(file));
-    formik.setFieldValue("file", file);
-  });
+  const onDrop = useCallback(
+    async (acceptedFile) => {
+      const file = acceptedFile[0];
+      setImage(URL.createObjectURL(file));
+      formik.setFieldValue("file", file);
+    },
+    [formik]
+  );
 
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
